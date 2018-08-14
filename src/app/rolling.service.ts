@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Die, Turn } from './models';
+import { Die, DieState, Turn } from './models';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,13 @@ export class RollingService {
   	return results;
   }
 
+  rollSingular(): Die {
+    var face = this.createRandomFaceValue()
+    return new Die(face);
+  }
+
   // roll a singular dice
-  rollSingular(): number {
+  createRandomFaceValue(): number {
   	return Math.floor(Math.random() * 6) + 1
   }
 }

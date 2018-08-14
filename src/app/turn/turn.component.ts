@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Player, Roll, Turn } from '../models';
+import { Die, DieState, Player, Roll, Turn } from '../models';
 import { RollingService } from '../rolling.service';
 import { ScoringService } from '../scoring.service';
 
@@ -20,7 +20,7 @@ export class TurnComponent implements OnInit {
   }
 
   clickEndTurn(): void {
-  	console.log('ended');
+  	this.turn.isFinished = true;
   }
 
   clickRoll(): void {
@@ -33,24 +33,30 @@ export class TurnComponent implements OnInit {
     }
   }
 
-  determineNumberOfDice(): number {
-    var numberOfDice = 5;
-    if (this.turn.dice && this.turn.dice.length > 0){
-      numberOfDice = numberOfDice - this.turn.openDice().length;
-    }
-    return numberOfDice;
-  }
+  roll(): void {
+      var numberOfDiceToRoll = 5;
 
-  roll(): void { 
-      var numberOfDice = this.determineNumberOfDice();
-      var result = this.rollingService.rollMany(numberOfDice);
-      console.log('result roll', result);
+      if (this.turn.selectedDice().length > 0 ){
+        this.convertSelectedDice();
+      }      
+
+      var result = this.rollingService.rollMany(numberOfDiceToRoll);
+      this.turn.dice = result;
   }
 
   scoreSelectedDice(): void {
     if (this.turn.dice && this.turn.selectedDice().length > 0){
-      var score = this.scoringService.score(this.turn.selectedDice());
+      var selectedDice = this.turn.selectedDice();
+      var score = this.scoringService.score(selectedDice);
       this.turn.score += score;
+    }
+  }
+
+  convertSelectedDice(): void {
+    for(let die of this.turn.dice){
+      if (die.state === DieState.Selected){
+        die.state = DieState.Set;
+      }
     }
   }
 }

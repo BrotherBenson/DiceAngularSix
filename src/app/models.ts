@@ -58,12 +58,17 @@ export class Roll {
 export class Die { 
 	face: number;
 	state: DieState;
+
+	constructor(face: number){
+		this.face = face;
+		this.state = DieState.Fresh;
+	}
 }
 
-enum DieState {
-	Fresh,
-	Selected,
-	Set
+export enum DieState {
+	Fresh = "FRESH",
+	Selected = "SELECTED",
+	Set = "SET"
 }
 
 export class Turn {

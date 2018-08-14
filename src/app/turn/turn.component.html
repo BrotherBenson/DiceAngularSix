@@ -5,29 +5,33 @@
 	</div>
 
 	<div class="dice-panel" style="border: 1px solid black">
-		<p>SET DICE</p>
+		<p>SET</p>
 		<div *ngFor="let die of turn.setDice()" 
 			 class="dice">
-			 <span>{{die.value}}</span>
-			 <span style="font-size"
+			 <span>{{die.face}}</span>
 		</div>
 	</div>
 
 	<div class="dice-panel" style="border: 1px solid red">
-		<p>SELECTED DICE</p>
+		<p>SELECTED</p>
 		<div *ngFor="let die of turn.selectedDice()" 
 			 class="dice">
-			 <span>{{die.value}}</span>
-			 <span style="font-size"
+			 <span>{{die.face}}</span>
 		</div>
 	</div>
 
 	<div class="dice-panel" style="border: 1px solid red">
-		<p>SELECTED DICE</p>
+		<p>FRESH</p>
 		<div *ngFor="let die of turn.openDice()" 
 			 class="dice">
-			 <span>{{die.value}}</span>
-			 <span style="font-size"
+			 <span>{{die.face}}</span>
+		</div>
+	</div>
+
+	<div style="border: 1px solid green">
+		<p>DEBUG -- ALL DICE</p>
+		<div *ngFor="let d of turn.dice">
+			 <span>Face: {{d.face}} State: {{d.state}}</span>
 		</div>
 	</div>
 
