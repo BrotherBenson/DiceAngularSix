@@ -4,13 +4,31 @@
 		<h2>Score: 5200</h2>
 	</div>
 
-	<div class="dice-panel">
-		<div class="dice"><span>1 </span></div>
-		<div class="dice"><span>2</span></div>
-		<div class="dice"><span>3</span></div>
-		<div class="dice"><span>4</span></div>
-		<div class="dice"><span>5</span></div>
-		<div class="dice"><span>6</span></div>
+	<div class="dice-panel" style="border: 1px solid black">
+		<p>SET DICE</p>
+		<div *ngFor="let die of turn.setDice()" 
+			 class="dice">
+			 <span>{{die.value}}</span>
+			 <span style="font-size"
+		</div>
+	</div>
+
+	<div class="dice-panel" style="border: 1px solid red">
+		<p>SELECTED DICE</p>
+		<div *ngFor="let die of turn.selectedDice()" 
+			 class="dice">
+			 <span>{{die.value}}</span>
+			 <span style="font-size"
+		</div>
+	</div>
+
+	<div class="dice-panel" style="border: 1px solid red">
+		<p>SELECTED DICE</p>
+		<div *ngFor="let die of turn.openDice()" 
+			 class="dice">
+			 <span>{{die.value}}</span>
+			 <span style="font-size"
+		</div>
 	</div>
 
 	<div>

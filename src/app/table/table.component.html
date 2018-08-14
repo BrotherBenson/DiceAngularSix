@@ -3,7 +3,5 @@
 	<button class="btn-secondary" (click)="clickScoreBoard()">Scoreboard</button>
 </div>
 
-Roll to see who goes first!
-
 <app-turn *ngIf="showTurn"></app-turn>
 <app-scoreboard *ngIf="showScoreBoard" [scores]="game.scores"></app-scoreboard>

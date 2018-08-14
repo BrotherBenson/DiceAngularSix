@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Die, Turn } from './models';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class RollingService {
 
   constructor() { }
 
-  rollMany(numberOfDice: number){
+  rollMany(numberOfDice: number): Array<Die> {
   	var results = [];
   	for (var i = 0; i < numberOfDice; i++){
   		results.push(this.rollSingular());
@@ -19,7 +21,7 @@ export class RollingService {
   }
 
   // roll a singular dice
-  rollSingular(): number{
+  rollSingular(): number {
   	return Math.floor(Math.random() * 6) + 1
   }
 }

@@ -55,9 +55,51 @@ export class Roll {
 	outcome: Array<number>;
 }
 
+export class Die { 
+	face: number;
+	state: DieState;
+}
+
+enum DieState {
+	Fresh,
+	Selected,
+	Set
+}
+
 export class Turn {
+	dice: Array<Die>;
 	isFinished: boolean;
 	player: Player;
 	rolls: Array<Roll>;
 	score: number;
+
+	constructor(player: Player){
+		this.dice = [];
+		this.isFinished = false;
+		this.player = player;
+		this.rolls = [];
+		this.score = 0;
+	}
+
+	openDice(): Array<Die>{
+		return this.filterDice(DieState.Fresh);
+	}
+
+	selectedDice(): Array<Die>{
+		return this.filterDice(DieState.Selected);
+	}
+
+	setDice(): Array<Die>{
+		return this.filterDice(DieState.Set);
+	}
+
+	filterDice(state: DieState){
+		var results = [];
+		for (let die of this.dice){
+			if (die.state === state) {
+				results.push(die);
+			}
+		}
+		return results;
+	}
 }

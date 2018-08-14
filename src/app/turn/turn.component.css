@@ -4,9 +4,22 @@
     height: 50px;
     text-align: center;
     width: 50px;
+
 }
 
 .dice span{
 	font-size: 30px;
 	font-weight: bold;
+}
+
+.open { 
+	border: 1px solid black; 
+}
+
+.selected { 
+	border: 1px solid black;
+ }
+
+.set {
+	border: 1px solid black;
 }
