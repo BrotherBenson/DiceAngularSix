@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Game, Player, Score, Turn } from './models';
+import { Game } from './game/game';
+import { Player } from './shared/models/player';
+import { Score } from './shared/models/score';
+import { Turn } from './turn/turn';
 
 @Injectable({
 	providedIn: 'root'

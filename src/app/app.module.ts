@@ -6,6 +6,7 @@ import { NewGameMenuComponent } from './new-game-menu/new-game-menu.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { TableComponent } from './table/table.component';
 import { TurnComponent } from './turn/turn.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TurnComponent } from './turn/turn.component';
     NewGameMenuComponent,
     ScoreboardComponent,
     TableComponent,
-    TurnComponent
+    TurnComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Die, DieState, Turn } from './models';
+import { Die, DieState } from './shared/models/die';
+import { Turn } from './turn/turn';
 
 @Injectable({
   providedIn: 'root'

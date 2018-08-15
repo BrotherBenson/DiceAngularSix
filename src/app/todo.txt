@@ -1,0 +1,7 @@
+A scratch file for to-dos.
+
+Move services to a directory.
+
+Users can have more than one game.
+Admins can invite users to play.
+Admins can host games.
