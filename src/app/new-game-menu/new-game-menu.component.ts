@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Game } from '../game/game';
-import { GameService } from '../game.service';
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-new-game-menu',

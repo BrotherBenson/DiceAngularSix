@@ -4,8 +4,8 @@ import { Player } from '../shared/models/player';
 import { Roll } from '../shared/models/roll';
 import { ScoreSet } from '../shared/models/score-set';
 import { Turn } from './turn';
-import { RollingService } from '../rolling.service';
-import { ScoringService } from '../scoring.service';
+import { RollingService } from '../services/rolling.service';
+import { ScoringService } from '../services/scoring.service';
 
 @Component({
   selector: 'app-turn',

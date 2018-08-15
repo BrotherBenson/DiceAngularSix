@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Die } from './shared/models/die';
-import { ScoreSet } from './shared/models/score-set';
+import { Die } from '../shared/models/die';
+import { ScoreSet } from '../shared/models/score-set';
 
 @Injectable({
   providedIn: 'root'
