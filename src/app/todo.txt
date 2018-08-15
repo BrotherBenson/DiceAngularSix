@@ -1,7 +1,43 @@
-A scratch file for to-dos.
+A scratch file for to-dos, prioritized as of 8/15
 
-Move services to a directory.
+GAMES
+    Roll to See Who Goes First
+    Scoring
+    Game Logic
+        Busting
+        
+DEBUG 
+    Menu
+    Routing
 
-Users can have more than one game.
-Admins can invite users to play.
-Admins can host games.
+UX
+    Splash Page
+    Play Alone
+    How to Play
+    Hamburger Menu
+
+HTTP
+DATABASE
+
+USERS AND ADMINS
+    Users
+        Users can have more than one game.
+        Users can play games.
+        Users can create games.
+        Sign Up
+        Sign In/Out
+        View
+            Active games
+            Past games / Record / Stats
+            Settings
+            Create Game
+
+    Admins
+        Admins can invite users.
+        Link Management
+            Create Link
+            Delete Link
+
+Google Analytics
+Computer Players
+    Customization

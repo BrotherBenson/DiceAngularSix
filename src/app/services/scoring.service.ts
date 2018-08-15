@@ -16,13 +16,14 @@ export class ScoringService {
     if (!dice || dice.length < 1 ){
       throw "invalid dice";
     }
-    var numberOfDice = dice.length;
+    var faces = this.getDiceFaces(dice);
+    var numberOfDice = faces.length;
 
     if (numberOfDice == 5){
-      return this.checkForStraight();
+      return this.checkForStraight(dice);
     }
     else if (numberOfDice == 3 || numberOfDice == 4){
-      this.checkForSets();
+      this.checkForSets(dice);
     }
     else {
       result = this.scoreIndividually(dice);
@@ -32,18 +33,58 @@ export class ScoringService {
     return result;
   }
 
-  checkForStraight(): number { 
+  checkForStraight(dice: Array<Die>): number { 
+    var asNumbers = this.getDiceFaces(dice);
+  
     return 1000;
   }
 
-  checkForSets(): number {
+  checkForSets(dice: Array<Die>): number {
+    var asNumbers = this.getDiceFaces(dice);
+
+    for(var checkValue = 1; checkValue < 7; checkValue++){
+      var count = 0;
+      for (let die of dice){
+        if (die.face === checkValue){
+          count++;
+        }
+      }
+      if (count >= 3){
+        this.scoreSet(checkValue);
+      }
+    }
+
     return 500;
   }
 
+  scoreSet(checkValue: number): number {
+    if (checkValue == null){
+      throw 'invalid checkValue -- null';
+    }
+
+    switch(checkValue){
+      case 1: 
+        return 1000;
+      case 2: 
+        return 200;
+      case 3: 
+        return 300;
+      case 4: 
+        return 400;
+      case 5: 
+        return 500;
+      case 6: 
+        return 600;
+      default: throw 'invalid checkValue -- not a dice number';
+    }
+  }
+
   scoreIndividually(dice: Array<Die>): number {
+    var asNumbers = this.getDiceFaces(dice);
+
     var result = 0;
-    for (let die of dice){
-      switch (die.face){
+    for (let number of asNumbers){
+      switch (number){
         case 1:
           return 100;
         case 5:
@@ -53,5 +94,15 @@ export class ScoringService {
       }
     }
     return 0;
+  }
+
+  getDiceFaces(dice: Array<Die>): Array<number> {
+    var results = [];
+
+    for (let die of dice){
+      results.push(die.face);
+    }
+
+    return results;
   }
 }
