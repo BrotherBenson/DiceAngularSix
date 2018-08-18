@@ -9,8 +9,9 @@ import { Game } from './game/game';
 
 export class AppComponent {
   // ui booleans
+  showDebugMenu = false;
   showRootMenu = true;
-  showNewGameMenu = false;
+  showGameMenu = false;
 
   game: Game;
 
@@ -20,6 +21,11 @@ export class AppComponent {
   
   clickNewGame(): void {
   	this.showRootMenu = false;
-  	this.showNewGameMenu = true;
+  	this.showGameMenu = true;
+  }
+
+  clickDebugMenu(): void {
+    this.showRootMenu = false;
+    this.showDebugMenu = true;
   }
 }

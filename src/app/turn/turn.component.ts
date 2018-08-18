@@ -35,27 +35,21 @@ export class TurnComponent implements OnInit {
   }
 
   clickRoll(): void {
-    console.log('clicked roll');
     if (this.turn != null && this.turn.dice != null){
-      console.log('processingSelected');
       this.processSelectedDice();
-
-      console.log('rolling');
       this.roll();
     }
     else { 
-      console.log('clickRoll() -- invalid turn')
+      throw 'clickRoll() -- invalid turn';
     }
   }
 
   processSelectedDice(): void {
-    console.log('processSelectedDice()');
     this.scoreSelectedDice();
     this.transferSelectedDiceToSet();
   }
 
   roll(): void {
-      console.log('roll()');
       var numberOfDiceToRoll =  5;
 
       if (this.turn.openDice().length){
@@ -63,12 +57,10 @@ export class TurnComponent implements OnInit {
       }
 
       if(this.turn.openDice().length > 0 ){
-        console.log('rolling ', numberOfDiceToRoll);
         var result = this.rollingService.rollMany(numberOfDiceToRoll);
       }
 
       this.turn.dice = result;
-      console.log('roll close')
   }
 
   scoreSelectedDice(): void {

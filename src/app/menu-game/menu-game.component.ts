@@ -3,20 +3,21 @@ import { Game } from '../game/game';
 import { GameService } from '../services/game.service';
 
 @Component({
-  selector: 'app-new-game-menu',
-  templateUrl: './new-game-menu.component.html',
-  styleUrls: ['./new-game-menu.component.css']
+  selector: 'app-menu-game',
+  templateUrl: './menu-game.component.html',
+  styleUrls: ['./menu-game.component.css']
 })
 
-export class NewGameMenuComponent {
+export class MenuGameComponent {
   @Input() game: Game;
 
   showPlayerCountMenu = true;
   showStandardRulesMenu = false;
+  
   constructor(private gameService: GameService) {
   }
 
-  clickPlayerCount(numberOfPlayers: number): void {
+  clickPlayerCount(numberOfPlayers: number): void{
     this.game.settings.numberOfPlayers = numberOfPlayers;
 
     this.showPlayerCountMenu = false;

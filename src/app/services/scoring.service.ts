@@ -16,18 +16,15 @@ export class ScoringService {
     if (!dice || dice.length < 1 ){
       throw "invalid dice";
     }
-    var numberArray = this.getDiceFaces(dice);
+
+    var numberArray = this.convertToNumberArray(dice);
     return this.scoreNumbers(numberArray);
   }
 
-  getDiceFaces(dice: Array<Die>): Array<number> {
-    var results = [];
-
-    for (let die of dice){
-      results.push(die.face);
-    }
-
-    return results;
+  convertToNumberArray(dice: Array<Die>): Array<number> {
+    var array = _.pluck(dice, 'face');
+    array = _.sortBy(array, function(num){num});
+    return array;
   }
 
   scoreNumbers(dice: Array<number>): number {
@@ -41,27 +38,30 @@ export class ScoringService {
     }
     else {
       return this.scoreIndividually(dice);
-      // check for individuals
     }
   }
 
   checkForStraight(dice: Array<number>): number {   
-    return 1000;
+    if (dice == [1,2,3,4,5]){
+      return 500;
+    }
+    if (dice == [2,3,4,5,6]){
+      return 1000;
+    }
   }
 
   checkForSets(dice: Array<number>): number {
     var result = 0;
-    for(var i = 1; i == 6; i++){
-      var count = _.countBy(dice, function(number){
-        return number == i;
-      })
-      if (count >= 3){
-        result = this.scoreSet(i);
-        var remainderArray = this.removeSet(i, dice);
-        result += this.scoreIndividually(remainderArray);
+    var setArray = _.groupBy(dice, function(num){return num;});
+    _.each(setArray, function(group){
+      if (group.length >= 3){
+        var num = group[0];
+        result = this.scoreSet(num);
+        var remainderArray = this.removeSet(group, dice);
+        return result + this.scoreIndividually(remainderArray);
       }
-    }
-    
+    })
+
     return result;
   }
 
@@ -94,13 +94,11 @@ export class ScoringService {
   scoreIndividually(dice: Array<number>): number {
     var result = 0;
     for (let number of dice){
-      switch (number){
-        case 1:
-          result += 100;
-        case 5:
-          result += 50;
-        default:
-          break;
+      if (number == 1){
+        result = result + 100;
+      }
+      else if (number == 5){
+        result = result + 50;
       }
     }
     return result;

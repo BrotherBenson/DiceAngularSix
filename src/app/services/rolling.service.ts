@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Die, DieState } from '../shared/models/die';
 import { Turn } from '../turn/turn';
+import { _ } from 'underscore';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class RollingService {
   		results.push(this.rollSingular());
   	}
 
-  	results.sort(function(a, b){return a-b});
+  	_.sortBy(results, function (num){num});
 
   	return results;
   }

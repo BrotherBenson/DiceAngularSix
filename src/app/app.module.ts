@@ -2,20 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NewGameMenuComponent } from './new-game-menu/new-game-menu.component';
+import { MenuGameComponent } from './menu-game/menu-game.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { TableComponent } from './table/table.component';
 import { TurnComponent } from './turn/turn.component';
 import { GameComponent } from './game/game.component';
+import { MenuDebugComponent } from './menu-debug/menu-debug.component';
+import { DebugComponent } from './debug/debug.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewGameMenuComponent,
+    MenuGameComponent,
     ScoreboardComponent,
     TableComponent,
     TurnComponent,
-    GameComponent
+    GameComponent,
+    MenuDebugComponent,
+    DebugComponent
   ],
   imports: [
     BrowserModule

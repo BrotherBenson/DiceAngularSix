@@ -40,7 +40,6 @@ export class Turn {
 
 	filterDice(state: DieState){
 		var results = [];
-		console.log(this.dice);
 		for (let die of this.dice){
 			if (die.state === state) {
 				results.push(die);

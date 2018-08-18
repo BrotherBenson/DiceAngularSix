@@ -1,0 +1,8 @@
+DEBUG COMPONENT
+<app-menu-debug *ngIf="viewModel.showDebugMenu" [viewModel]="viewModel">
+
+<!-- the app component user new game -->
+<div *ngIf="viewModel.showGameMenu">
+    <app-menu-game [game]="game"></app-menu-game>
+    <app-table [game]="game" *ngIf="game.isReady"></app-table>
+</div>

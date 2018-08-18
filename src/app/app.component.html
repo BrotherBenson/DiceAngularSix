@@ -4,7 +4,12 @@
   <p>Dice is a turn-based dice game to 10000.</p>
 
   <button (click)="clickNewGame()">New Game</button>
+  <button (click)="clickDebugMenu()">Debug</button>
 </div>
 
-<app-new-game-menu [game]="game" *ngIf="showNewGameMenu"></app-new-game-menu>
+<!-- user game menu -->
+<app-menu-game [game]="game" *ngIf="showGameMenu"></app-menu-game>
 <app-table [game]="game" *ngIf="game.isReady"></app-table>
+
+<!-- a debug menu for generating scenarios in development -->
+<app-debug *ngIf="showDebugMenu"></app-debug>
