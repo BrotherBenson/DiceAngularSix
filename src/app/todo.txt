@@ -13,8 +13,10 @@ DEBUG
 UX
     Splash Page
     Play Alone
-    How to Play
     Hamburger Menu
+        - games 
+        - profile
+        - how to play
 
 HTTP
 DATABASE

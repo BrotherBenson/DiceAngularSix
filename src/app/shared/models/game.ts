@@ -1,7 +1,7 @@
-import { Player } from '../shared/models/player';
-import { Score } from '../shared/models/score';
-import { Settings } from '../shared/models/settings';
-import { Turn } from '../turn/turn';
+import { Player } from './player';
+import { Score } from './score';
+import { Settings } from './settings';
+import { Turn } from '../../turn/turn';
 
 export class Game {
 	isFinished: boolean;
@@ -11,7 +11,7 @@ export class Game {
 	settings: Settings;
 	turns: Array<Turn>;
 
-	constructor() { 
+	constructor() {
 		this.isFinished = false;
 		this.isReady = false;
 		this.players = [];
@@ -20,3 +20,7 @@ export class Game {
 		this.turns = [];
 	}
 }
+
+
+
+

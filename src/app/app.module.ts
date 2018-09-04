@@ -6,7 +6,6 @@ import { MenuGameComponent } from './menu-game/menu-game.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { TableComponent } from './table/table.component';
 import { TurnComponent } from './turn/turn.component';
-import { GameComponent } from './game/game.component';
 import { MenuDebugComponent } from './menu-debug/menu-debug.component';
 import { DebugComponent } from './debug/debug.component';
 
@@ -17,7 +16,6 @@ import { DebugComponent } from './debug/debug.component';
     ScoreboardComponent,
     TableComponent,
     TurnComponent,
-    GameComponent,
     MenuDebugComponent,
     DebugComponent
   ],

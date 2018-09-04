@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Game } from '../game/game';
+import { Game } from '../shared/models/game';
 import { Player } from '../shared/models/player';
 import { Score } from '../shared/models/score';
 import { Turn } from '../turn/turn';
