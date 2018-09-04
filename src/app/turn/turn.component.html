@@ -25,129 +25,20 @@
 	<div class="dice-panel" style="border: 1px solid red">
 		<p>FRESH</p>
 		<div *ngFor="let die of turn.openDice()" 
-			 class="dice"
-			 (click)="clickDice(die)">
-			 <span>{{die.face}}</span>
-		</div>
-	</div>
-
-	<div style="border: 1px solid green">
-		<p>DEBUG -- ALL DICE</p>
-		<div *ngFor="let d of turn.dice">
-			 <span>Face: {{d.face}} State: {{d.state}}</span>
-		</div>
+			class="dice"
+			(click)="clickDice(die)">
+			<span>{{die.face}}</span>
+   		</div>
+		<!-- NOT SURE WHY THIS DOESN'T WORK
+		<div *ngFor="let die of turn.openDice()"
+			(click)="clickDice(die)"
+			class="dice">
+			<div ng-include="'die-1.html'"></div>
+		</div> -->
 	</div>
 
 	<div>
 		<button class="btn-primary" (click)="clickRoll()">Roll</button>
 		<button class="btn-primary" (click)="clickEndTurn()">End Turn</button>
-	</div>
-
-	<div class="dice">
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-	</div>
-
-	<div class="dice">
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
-	</div>
-
-	<div class="dice">
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
-	</div>
-
-	<div class="dice">
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
-	</div>
-
-	<div class="dice">
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
-	</div>
-
-	<div class="dice">
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
-		<div class="dice-grid-row">
-			<div class="dice-cell-full"><div></div></div>
-			<div class="dice-cell-empty"><div></div></div>
-			<div class="dice-cell-full"><div></div></div>
-		</div>
 	</div>
 </div>

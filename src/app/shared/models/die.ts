@@ -18,7 +18,7 @@ export class Die {
 					break;
 				case DieState.Fresh:
 				default:
-					throw "Invalid TieState";
+					throw "Invalid DieState";
 			}
 		}
 	}
