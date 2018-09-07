@@ -10,8 +10,9 @@ import { Game } from './shared/models/game';
 export class AppComponent {
   // ui booleans
   showDebugMenu = false;
-  showRootMenu = true;
   showGameMenu = false;
+  showMultiplayer = false;
+  showRootMenu = true;
 
   game: Game;
 
@@ -20,12 +21,21 @@ export class AppComponent {
   }
   
   clickNewGame(): void {
-  	this.showRootMenu = false;
+  	this.hideRootMenu()
   	this.showGameMenu = true;
   }
 
   clickDebugMenu(): void {
-    this.showRootMenu = false;
+    this.hideRootMenu()
     this.showDebugMenu = true;
+  }
+
+  clickMultiplayer(): void{
+    this.hideRootMenu()
+    this.showMultiplayer = true;
+  }
+
+  hideRootMenu(): void{
+    this.showRootMenu = false;
   }
 }

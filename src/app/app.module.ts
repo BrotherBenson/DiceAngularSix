@@ -8,6 +8,7 @@ import { TableComponent } from './table/table.component';
 import { TurnComponent } from './turn/turn.component';
 import { MenuDebugComponent } from './menu-debug/menu-debug.component';
 import { DebugComponent } from './debug/debug.component';
+import { MultiplayerComponent } from './multiplayer/multiplayer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DebugComponent } from './debug/debug.component';
     TableComponent,
     TurnComponent,
     MenuDebugComponent,
-    DebugComponent
+    DebugComponent,
+    MultiplayerComponent
   ],
   imports: [
     BrowserModule

@@ -1,9 +1,12 @@
 import { Die, DieState } from '../shared/models/die';
+import { Game } from '../shared/models/game';
 import { Player } from '../shared/models/player';
 import { Roll } from '../shared/models/roll';
+import { GameService } from '../services/game.service';
 
 export class Turn {
 	dice: Array<Die>;
+	game: Game;
 	isFinished: boolean;
 	player: Player;
 	rolls: Array<Roll>;

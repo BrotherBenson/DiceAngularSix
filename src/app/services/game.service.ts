@@ -3,6 +3,7 @@ import { Game } from '../shared/models/game';
 import { Player } from '../shared/models/player';
 import { Score } from '../shared/models/score';
 import { Turn } from '../turn/turn';
+import { _ } from 'underscore';
 
 @Injectable({
 	providedIn: 'root'
@@ -25,14 +26,40 @@ export class GameService {
 			game.scores.push(new Score(player));
 		}
 		game.isReady = true;
-		console.log(game);
+	}
+	
+	endTurn(turn: Turn, game: Game): void {
+		turn.isFinished = true;
+		game.turns.push(turn);
 	}
 
-	endTurn(): void {
-		console.log("it's all over");
+	initializeNextTurn(game: Game): Turn {
+		var nextShooter = this.getNextShooter(game);
+		var turn = new Turn(nextShooter);
+		return turn;
 	}
 
-	startNextTurn(): void {
-		console.log("next");
+	getNextShooter(game: Game): Player {
+		var lastTurn = _.last(game.turns);
+		var lastShooter = lastTurn.player;
+		var index = game.players.indexOf(lastShooter);
+		var lastPlayerPosition = game.players.length -1;
+
+		var obj = {
+			lastTurn: lastTurn, 
+			lastShooter: lastShooter, 
+			index: index, 
+			lastPlayerPosition: lastPlayerPosition
+		};
+
+		console.log('getNextShooter()', obj);
+
+		if (index == lastPlayerPosition){
+			console.log('first');
+			return _.first(game.players);
+		} else{
+			console.log('second');
+			return game.players[index+1];
+		}
 	}
 }

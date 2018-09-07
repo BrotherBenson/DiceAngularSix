@@ -4,6 +4,7 @@ import { Player } from '../shared/models/player';
 import { Roll } from '../shared/models/roll';
 import { ScoreSet } from '../shared/models/score-set';
 import { Turn } from './turn';
+import { GameService } from '../services/game.service';
 import { RollingService } from '../services/rolling.service';
 import { ScoringService } from '../services/scoring.service';
 
@@ -17,7 +18,10 @@ export class TurnComponent implements OnInit {
   @Input() player: Player;
   turn: Turn;
 
-  constructor(private rollingService: RollingService, private scoringService: ScoringService) { }
+  constructor(
+    private gameService: GameService,
+    private rollingService: RollingService, 
+    private scoringService: ScoringService) { }
 
   ngOnInit() {
     this.turn = new Turn(this.player);
@@ -31,7 +35,7 @@ export class TurnComponent implements OnInit {
   }
 
   clickEndTurn(): void {
-  	this.turn.isFinished = true;
+    this.gameService.endTurn(this.turn, this.turn.game);
   }
 
   clickRoll(): void {
