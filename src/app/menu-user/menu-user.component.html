@@ -1,0 +1,11 @@
+<div *ngIf="showRootMenu">
+  <button (click)="clickGames()">Games</button>
+  <button (click)="clickProfile()">Profile</button>
+  <button (click)="clickSettings()">Settings</button>
+</div>
+
+<div *ngIf="showGames">Games</div>
+<div *ngIf="showProfile">Profile</div>
+<div *ngIf="showSettings">Settings</div>
+
+<button *ngIf="!showRootMenu" (click)="clickBack()">Back</button>

@@ -17,9 +17,9 @@ export class RollingService {
   		results.push(this.rollSingular());
   	}
 
-  	_.sortBy(results, function (num){num});
+    _.sortBy(results, function (num){num});
 
-  	return results;
+    return results;
   }
 
   rollSingular(): Die {

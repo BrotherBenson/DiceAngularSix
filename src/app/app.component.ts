@@ -13,6 +13,7 @@ export class AppComponent {
   showGameMenu = false;
   showMultiplayer = false;
   showRootMenu = true;
+  showUserMenu = false;
 
   game: Game;
 
@@ -33,6 +34,11 @@ export class AppComponent {
   clickMultiplayer(): void{
     this.hideRootMenu()
     this.showMultiplayer = true;
+  }
+
+  clickUserMenu(): void{
+    this.hideRootMenu();
+    this.showUserMenu = true;
   }
 
   hideRootMenu(): void{

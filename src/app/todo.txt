@@ -2,7 +2,6 @@ A scratch file for to-dos, prioritized as of 8/15
 
 GAMES
     Roll to See Who Goes First
-    Scoring
     Game Logic
         Busting
         
