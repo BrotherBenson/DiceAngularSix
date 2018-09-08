@@ -6,10 +6,12 @@ import { MenuGameComponent } from './menu-game/menu-game.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { TableComponent } from './table/table.component';
 import { TurnComponent } from './turn/turn.component';
-import { MenuDebugComponent } from './menu-debug/menu-debug.component';
-import { DebugComponent } from './debug/debug.component';
 import { MultiplayerComponent } from './multiplayer/multiplayer.component';
 import { MenuUserComponent } from './menu-user/menu-user.component';
+import { UserStatsComponent } from './user-stats/user-stats.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { UserGamesComponent } from './user-games/user-games.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import { MenuUserComponent } from './menu-user/menu-user.component';
     ScoreboardComponent,
     TableComponent,
     TurnComponent,
-    MenuDebugComponent,
-    DebugComponent,
     MultiplayerComponent,
-    MenuUserComponent
+    MenuUserComponent,
+    UserStatsComponent,
+    UserProfileComponent,
+    UserSettingsComponent,
+    UserGamesComponent
   ],
   imports: [
     BrowserModule

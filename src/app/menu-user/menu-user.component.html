@@ -1,11 +1,29 @@
 <div *ngIf="showRootMenu">
+  <button (click)="clickNewGame()">New Game</button>
   <button (click)="clickGames()">Games</button>
   <button (click)="clickProfile()">Profile</button>
+  <button (click)="clickRules()">How to Play</button>
   <button (click)="clickSettings()">Settings</button>
 </div>
 
-<div *ngIf="showGames">Games</div>
-<div *ngIf="showProfile">Profile</div>
-<div *ngIf="showSettings">Settings</div>
+<div *ngIf="showNewGameMenu">
+  <app-menu-game *ngIf="showNewGameMenu"></app-menu-game>
+</div>
+
+<div *ngIf="showGames">
+  <app-user-games></app-user-games>
+</div>
+
+<div *ngIf="showProfile">
+  <app-user-profile></app-user-profile>
+</div>
+
+<div *ngIf="showSettings">
+  <app-user-settings></app-user-settings>
+</div>
+
+<div *ngIf="showRules">
+  <div ngInclude="rules.html"></div>
+</div>
 
 <button *ngIf="!showRootMenu" (click)="clickBack()">Back</button>

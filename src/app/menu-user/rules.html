@@ -1,0 +1,38 @@
+<h2>How To Play</h2>
+<p>Dice is a turn-based multiplayer game played with five dice.</p>
+
+<h3>Objective</h3>
+<p>Score exactly 10,000 points before your opponents.</p>
+
+<h3>Gameplay</h3>
+<p>The first objective of a player's turn is to get 'in the game'. In order to get in the game, a player must score 750 points or more on one turn without busting. After a player is in the game, a player may inherit scores. More on that later.</p>
+
+<h3>Turns</h3>
+<p>At the onset of the game and in situations where a player cannot inherit points, a turn starts with a player rolling five dice. After a roll, a player makes elections as to how to score the outcome and may be awarded subsequent rolls. There is very important logic as to how points are scored.</p>
+<p>When a player finishes their turn, they add their turn score to their game score. The dice are then passed to the next player to begin their turn.</p>
+
+<h4>Inheriting</h4>
+<p>If a player is 'in the game', she may inherit the points from the turn immediately preceding hers. For instance, ALICE's turn score is 1,500, with three dice available. She rolls [1,2,2]. Her turn score is now 1,600 with two dice to go. She can now elect to end her turn. BERT, who's in the game, may elect to inherit her score. If he does, he may roll two dice with the hope of adding to the inherited score.</p>
+
+<p>If BERT rolls [1,1], he now has 1,800 points and five free dice.</p>
+<p>If BERT rolls [1,2], he now has 1,700 points and one free dice.</p>
+<p>If BERT rolls [2,2], he busts.</p>
+
+<p>There's a bit of logic to consider when inheriting a turn. For instance, if ALICE has 9,600 and she rolls a [1,2,2,5,5], she has 200 points on three dice. She may play conservatively, end her turn, and allow BERT the option to inherit this score. BERT might believe he can do better than 200 points and elect to roll five dice, forgoing his rights to inheriting 200 points.</p>
+
+<h3>Scoring Points</h3>
+<h4>Point Values</h4>
+<p>In dice, players score points by rolling fives, ones, sets, or straights.</p>
+<p>Fives are worth 50 points each.
+<p>Ones are worth 100 points each.
+<p><strong>Sets</strong> are groups of three matching dice. Three 1's are worth 1,000 points. Three 2's, 200. Three 3's, 300. Three 4's, 400. Three 5's, 500. Three 6's, 600.</p>
+<p><strong>Straights</strong> are runs of five consecutive values. A small straight goes from 1-5 and is worth 500. A large straight goes from 2-6 and is worth 1000.
+
+<h4>Important Scoring Scenarios</h4>
+<p>A player is afforded some freedom as to scoring decision in some circumstances.</p>
+<p>For instance, if a player is not yet in the game and she rolls [1,2,2,2,3], she has three options: she could take the 100 points for the 1, take the 200 points for the set of 2's, or take the 300 for the sum of those. Each of these scenarios affords her a different probability in terms of prolonging her turn and scoring a higher value.
+
+<h3>Busting</h3>
+<p>Busting can happen in one of two ways. Most commonly, it happens during a players turn when the dice come up with no value. For instance, if a player rolled '2,2,4,4,6', that would have no value and the player would bust.</p>
+<p>Less frequently, though just as important, a player can bust in the late stages of the game by going over 10,000 points. For instance, if a player had 9,500 points and rolled a large straight, they would then have 10,500 points.</p>
+<p>In both cases, the result of busting is a void of the turn. The player is awarded no points and play proceedes to the next player.</p>

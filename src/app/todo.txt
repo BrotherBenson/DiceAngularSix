@@ -23,8 +23,6 @@ DATABASE
 USERS AND ADMINS
     Users
         Users can have more than one game.
-        Users can play games.
-        Users can create games.
         Sign Up
         Sign In/Out
         View

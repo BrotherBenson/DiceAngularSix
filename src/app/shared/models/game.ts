@@ -8,6 +8,7 @@ export class Game {
 	players: Array<Player>;
 	scores: Array<Score>;
 	settings: Settings;
+	status: GameStatus;
 	turns: Array<Turn>;
 
 	constructor() {
@@ -15,6 +16,7 @@ export class Game {
 		this.players = [];
 		this.scores = [];
 		this.settings = new Settings();
+		this.status = GameStatus.Active
 		this.turns = [];
 	}
 
@@ -28,6 +30,11 @@ export class Game {
 			return false;
 		}
 	}
+}
+
+export enum GameStatus{
+	Active = "ACTIVE",
+	Complete = "COMPLETE"
 }
 
 
