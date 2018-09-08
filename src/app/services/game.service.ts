@@ -3,6 +3,7 @@ import { Game } from '../shared/models/game';
 import { Player } from '../shared/models/player';
 import { Score } from '../shared/models/score';
 import { Turn } from '../turn/turn';
+import { User } from '../shared/models/user';
 import { _ } from 'underscore';
 
 @Injectable({
@@ -15,10 +16,12 @@ export class GameService {
 	constructor() { }
 
 	initializeGame(game: Game): void {
+		var NAMES = ["Art", "Ben", "Cam", "Doc", "Edd", "Fay", "Gil", "Han", "Ian", "Jan", "Kip", "Lou", "Max", "Nas"];
 		// create players
 		for (var i = 0; i < game.settings.numberOfPlayers; i++){
 			var players = [];
-			game.players.push(new Player(i + 1));
+			var user = new User(i, NAMES[i])
+			game.players.push(new Player(user));;
 		}
 
 		// create scores

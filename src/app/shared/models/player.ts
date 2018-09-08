@@ -1,9 +1,11 @@
+import { User } from './user';
+
 export class Player {
-	id: number;
+	user: User;
 	inTheGame: boolean;
 
-	constructor(id: number){
-		this.id = id;
+	constructor(user: User){
+		this.user = user;
 		this.inTheGame = false;
 	}
 }

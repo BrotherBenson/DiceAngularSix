@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from '../shared/models/game';
 import { Player } from '../shared/models/player';
 import { Turn } from '../turn/turn';
+import { User } from '../shared/models/user';
 import { GameService } from '../services/game.service';
 import { _ } from 'underscore';
 
@@ -25,8 +26,8 @@ export class MultiplayerComponent implements OnInit {
   }
 
   initializeGame(): void{
-    var player1 = new Player(1);
-    var player2 = new Player(2);
+    var player1 = new Player(new User(1, "Benson"));
+    var player2 = new Player(new User(2, "Andy"));
     this.game.isReady = true;
     this.game.players = [
       player1, player2

@@ -14,4 +14,4 @@
 
 <app-multiplayer *ngIf="showMultiplayer"></app-multiplayer>
 
-<app-menu-user *ngIf="showUserMenu"></app-menu-user>
+<app-menu-user [user]="user" *ngIf="showUserMenu"></app-menu-user>

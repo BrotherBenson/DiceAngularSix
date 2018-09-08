@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from './shared/models/game';
+import { User } from './shared/models/user';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,11 @@ export class AppComponent {
   showUserMenu = false;
 
   game: Game;
+  user: User;
 
   ngOnInit(){
     this.game = new Game();
+    this.user = new User(1, "Ben");
   }
   
   clickNewGame(): void {

@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from '../shared/models/user';
 
 @Component({
   selector: 'app-menu-user',
   templateUrl: './menu-user.component.html',
   styleUrls: ['./menu-user.component.css']
 })
+
 export class MenuUserComponent implements OnInit {
+  @Input() user: User;
+
   showGames: boolean;
   showNewGameMenu: boolean;
   showRootMenu: boolean;
