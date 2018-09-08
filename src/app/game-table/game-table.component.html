@@ -1,0 +1,7 @@
+<div style="text-align:center;">
+	<button class="btn-secondary" (click)="clickTurn()" >Turn</button>
+	<button class="btn-secondary" (click)="clickScoreBoard()">Scoreboard</button>
+</div>
+
+<app-game-turn *ngIf="showTurn"></app-game-turn>
+<app-game-scoreboard *ngIf="showScoreBoard" [scores]="game.scores"></app-game-scoreboard>

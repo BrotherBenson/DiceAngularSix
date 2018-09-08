@@ -10,7 +10,7 @@
 
 <!-- user game menu -->
 <app-menu-game [game]="game" *ngIf="showGameMenu"></app-menu-game>
-<app-table [game]="game" *ngIf="game.isReady"></app-table>
+<app-game-table [game]="game" *ngIf="game.isReady"></app-game-table>
 
 <app-multiplayer *ngIf="showMultiplayer"></app-multiplayer>
 

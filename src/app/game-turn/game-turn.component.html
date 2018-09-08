@@ -1,0 +1,44 @@
+<div>
+	<div class="marquee center">
+		<h1>Player 1</h1>
+		<h2>Score: 5200</h2>
+		<h3>TURN SCORE: {{turn.score}}</h3>
+	</div>
+
+	<div class="dice-panel" style="border: 1px solid black">
+		<p>SET</p>
+		<div *ngFor="let die of turn.setDice()" 
+			 class="dice">
+			 <span>{{die.face}}</span>
+		</div>
+	</div>
+
+	<div class="dice-panel" style="border: 1px solid red">
+		<p>SELECTED</p>
+		<div *ngFor="let die of turn.selectedDice()" 
+			 class="dice"
+			 (click)="clickDice(die)">
+			 <span>{{die.face}}</span>
+		</div>
+	</div>
+
+	<div class="dice-panel" style="border: 1px solid red">
+		<p>FRESH</p>
+		<div *ngFor="let die of turn.openDice()" 
+			class="dice"
+			(click)="clickDice(die)">
+			<span>{{die.face}}</span>
+   		</div>
+		<!-- NOT SURE WHY THIS DOESN'T WORK
+		<div *ngFor="let die of turn.openDice()"
+			(click)="clickDice(die)"
+			class="dice">
+			<div ng-include="'die-1.html'"></div>
+		</div> -->
+	</div>
+
+	<div>
+		<button class="btn-primary" (click)="clickRoll()">Roll</button>
+		<button class="btn-primary" (click)="clickEndTurn()">End Turn</button>
+	</div>
+</div>
