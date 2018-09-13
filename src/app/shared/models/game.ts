@@ -1,7 +1,7 @@
 import { Player } from './player';
 import { Score } from './score';
 import { Settings } from './settings';
-import { Turn } from '../../turn/turn';
+import { Turn } from '../../game-turn/turn';
 
 export class Game {
 	isReady: boolean;

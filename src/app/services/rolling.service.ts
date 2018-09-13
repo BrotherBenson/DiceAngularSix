@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Die, DieState } from '../shared/models/die';
-import { Turn } from '../turn/turn';
+import { Turn } from '../game-turn/turn';
 import { _ } from 'underscore';
 
 @Injectable({

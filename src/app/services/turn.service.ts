@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RollingService } from './rolling.service';
 import { ScoringService } from './scoring.service';
-import { Turn } from '../turn/turn';
+import { Turn } from '../game-turn/turn';
 import { Game } from '../shared/models/game';
 
 @Injectable({

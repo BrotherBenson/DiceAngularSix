@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Game, GameStatus } from '../shared/models/game';
 import { LoginRequest } from './models/loginRequest';
 import { LoginResponse } from './models/loginResponse';
+import { Player } from '../shared/models/player';
+import { Record } from '../shared/models/record';
 import { SignupRequest } from './models/signupRequest';
 import { SignupResponse } from './models/signupResponse';
-import { Record } from '../shared/models/record';
-import { Player } from '../shared/models/player';
 import { User } from '../shared/models/user';
 import { _ } from 'underscore';
 
