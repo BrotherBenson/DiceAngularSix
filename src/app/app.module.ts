@@ -18,6 +18,7 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserStatsComponent } from './user-stats/user-stats.component';
 import { MenuLoginComponent } from './menu-login/menu-login.component';
 import { MenuSignupComponent } from './menu-signup/menu-signup.component';
+import { PlayerGameComponent } from './player-game/player-game.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { MenuSignupComponent } from './menu-signup/menu-signup.component';
     MenuAdminComponent,
     AdminInviteComponent,
     MenuLoginComponent,
-    MenuSignupComponent
+    MenuSignupComponent,
+    MultiplayerComponent,
+    PlayerGameComponent
   ],
   imports: [
     BrowserModule,

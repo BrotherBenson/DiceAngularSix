@@ -43,13 +43,6 @@ export class GameService {
 		var index = game.players.indexOf(lastShooter);
 		var lastPlayerPosition = game.players.length -1;
 
-		var obj = {
-			lastTurn: lastTurn, 
-			lastShooter: lastShooter, 
-			index: index, 
-			lastPlayerPosition: lastPlayerPosition
-		};
-
 		if (index == lastPlayerPosition){
 			return _.first(game.players);
 		} else{

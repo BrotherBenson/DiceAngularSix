@@ -16,6 +16,11 @@ GAMES
         roll many
         roll singular
 
+USER STUFF
+    Forgot Password
+    Invite Emails
+
+
 
 
     12345

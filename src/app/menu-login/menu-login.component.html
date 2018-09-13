@@ -1,14 +1,16 @@
 <div class="center">
   <div>
     <label>username:</label>
-    <input [(ngModel)]="user.name" placeholder="username" type="text">
+    <input [(ngModel)]="inputName" placeholder="username" type="text">
   </div>
 
   <div>
     <label>password:</label>
-    <input placeholder="password" type="text">
+    <input [(ngModel)]="inputPassword" placeholder="password" type="text">
   </div>
-</div>
 
-<div>
+  <div>
+    <button (click)="clickForgot()">Forgot Password</button>
+    <button (click)="clickLogin()">Login</button>
+  </div>
 </div>

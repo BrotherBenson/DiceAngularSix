@@ -6,3 +6,7 @@ Currently, it's player {{ turn.player.user.id }}'s turn.
 
 
 <button (click)="endTurn()">End Turn</button>
+
+<div *ngFor="let player of game.players">
+    <app-player-game [player]="player"></app-player-game>
+</div>
