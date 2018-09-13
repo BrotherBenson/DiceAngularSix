@@ -4,6 +4,35 @@ GAMES
     Roll to See Who Goes First
     Game Logic
         Busting
+
+    GameService
+        proceed play to next player
+
+    TurnService
+        logic for Turns
+            end Turn
+            how many dice to roll?
+    RollingService
+        roll many
+        roll singular
+
+
+
+    12345
+    111 555 
+
+    You have the option to take 100,200,1000,1100,1200.
+    
+    Sub ones/fives for other scores?
+
+        Straight => Always a straight.
+        Sets => Can be ones/fives
+        Ones/Fives => 
+        
+
+
+
+    
         
 DEBUG 
     Menu
@@ -25,17 +54,6 @@ USERS AND ADMINS
         Users can have more than one game.
         Sign Up
         Sign In/Out
-        View
-            Active games
-            Past games / Record / Stats
-            Settings
-            Create Game
-
-    Admins
-        Admins can invite users.
-        Link Management
-            Create Link
-            Delete Link
 
 Google Analytics
 Computer Players

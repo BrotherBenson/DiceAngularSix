@@ -4,6 +4,7 @@ import { Player } from '../shared/models/player';
 import { Turn } from '../turn/turn';
 import { User } from '../shared/models/user';
 import { GameService } from '../services/game.service';
+import { TurnService } from '../services/turn.service';
 import { _ } from 'underscore';
 
 @Component({
@@ -15,8 +16,10 @@ import { _ } from 'underscore';
 export class MultiplayerComponent implements OnInit {
   game: Game;
   turn: Turn;
+  player1: Player;
+  player2: Player;
 
-  constructor(private gameService : GameService ) { 
+  constructor(private gameService : GameService, private turnService: TurnService ) { 
     this.game = new Game();
   }
 
@@ -26,17 +29,17 @@ export class MultiplayerComponent implements OnInit {
   }
 
   initializeGame(): void{
-    var player1 = new Player(new User(1, "Benson"));
-    var player2 = new Player(new User(2, "Andy"));
+    this.player1 = new Player(new User(1, "Benson", "jeff"));
+    this.player2 = new Player(new User(2, "Andy", "jeff"));
     this.game.isReady = true;
     this.game.players = [
-      player1, player2
+      this.player1, this.player2
     ];
-    this.game.turns.push(new Turn(player1));
+    this.game.turns.push(new Turn(this.player1));
   }
 
   endTurn(): void {
-    this.gameService.endTurn(this.turn, this.game);
-    this.turn = this.gameService.initializeNextTurn(this.game);
+    this.turnService.endTurn(this.turn, this.game);
+    this.turn = this.gameService.beginNextTurn(this.game);
   }
 }

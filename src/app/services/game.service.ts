@@ -20,7 +20,7 @@ export class GameService {
 		// create players
 		for (var i = 0; i < game.settings.numberOfPlayers; i++){
 			var players = [];
-			var user = new User(i, NAMES[i])
+			var user = new User(i, NAMES[i], "bill")
 			game.players.push(new Player(user));;
 		}
 
@@ -30,13 +30,8 @@ export class GameService {
 		}
 		game.isReady = true;
 	}
-	
-	endTurn(turn: Turn, game: Game): void {
-		turn.isFinished = true;
-		game.turns.push(turn);
-	}
 
-	initializeNextTurn(game: Game): Turn {
+	beginNextTurn(game: Game): Turn {
 		var nextShooter = this.getNextShooter(game);
 		var turn = new Turn(nextShooter);
 		return turn;
@@ -55,13 +50,9 @@ export class GameService {
 			lastPlayerPosition: lastPlayerPosition
 		};
 
-		console.log('getNextShooter()', obj);
-
 		if (index == lastPlayerPosition){
-			console.log('first');
 			return _.first(game.players);
 		} else{
-			console.log('second');
 			return game.players[index+1];
 		}
 	}

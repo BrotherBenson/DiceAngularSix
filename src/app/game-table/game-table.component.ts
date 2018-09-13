@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Game } from '../shared/models/game';
+import { User } from '../shared/models/user';
 import { ScoringService } from '../services/scoring.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { ScoringService } from '../services/scoring.service';
 
 export class GameTableComponent implements OnInit {
   @Input() game: Game;
+  @Input() user: User;
 
   showScoreBoard: boolean;
   showTurn: boolean;

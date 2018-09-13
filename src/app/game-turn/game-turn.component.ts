@@ -7,6 +7,7 @@ import { Turn } from './turn';
 import { GameService } from '../services/game.service';
 import { RollingService } from '../services/rolling.service';
 import { ScoringService } from '../services/scoring.service';
+import { TurnService } from '../services/turn.service';
 
 @Component({
   selector: 'app-game-turn',
@@ -19,23 +20,22 @@ export class GameTurnComponent implements OnInit {
   turn: Turn;
 
   constructor(
-    private gameService: GameService,
     private rollingService: RollingService, 
-    private scoringService: ScoringService) { }
+    private scoringService: ScoringService,
+    private turnService: TurnService) { }
 
   ngOnInit() {
     this.turn = new Turn(this.player);
   }
 
   clickDice(die: Die): void {
-    console.log('clicked dice');
     if (die != null){
       die.toggleDieState();
     }
   }
 
   clickEndTurn(): void {
-    this.gameService.endTurn(this.turn, this.turn.game);
+    this.turnService.endTurn(this.turn, this.turn.game);
   }
 
   clickRoll(): void {

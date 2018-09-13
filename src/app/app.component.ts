@@ -10,10 +10,13 @@ import { User } from './shared/models/user';
 
 export class AppComponent {
   // ui booleans
+  showAdminMenu = false;
   showDebugMenu = false;
   showGameMenu = false;
+  showLogin = false;
   showMultiplayer = false;
   showRootMenu = true;
+  showSignup = false;
   showUserMenu = false;
 
   game: Game;
@@ -21,7 +24,11 @@ export class AppComponent {
 
   ngOnInit(){
     this.game = new Game();
-    this.user = new User(1, "Ben");
+  }
+
+  clickAdmin(): void { 
+    this.hideRootMenu();
+    this.showAdminMenu = true;
   }
   
   clickNewGame(): void {
@@ -34,9 +41,19 @@ export class AppComponent {
     this.showDebugMenu = true;
   }
 
+  clickLogin(): void {
+    this.hideRootMenu();
+    this.showLogin = true;
+  }
+
   clickMultiplayer(): void{
     this.hideRootMenu()
     this.showMultiplayer = true;
+  }
+
+  clickSignup(): void{
+    this.hideRootMenu();
+    this.showSignup = true;
   }
 
   clickUserMenu(): void{

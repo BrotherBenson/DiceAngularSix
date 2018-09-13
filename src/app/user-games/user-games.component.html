@@ -1,3 +1,5 @@
-<p>
-  user-games works!
-</p>
+<ul>
+  <li *ngFor="let game of games">
+    Game {{ game.players[0].user.name }}
+  </li>
+</ul>
