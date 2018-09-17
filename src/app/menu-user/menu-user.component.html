@@ -1,13 +1,24 @@
 <div *ngIf="showRootMenu">
-  <button (click)="clickNewGame()">New Game</button>
-  <button (click)="clickGames()">Games</button>
-  <button (click)="clickProfile()">Profile</button>
-  <button (click)="clickRules()">How to Play</button>
-  <button (click)="clickSettings()">Settings</button>
+
+  <a href="/newgame">
+    <button>New Game</button>
+  </a>
+  <a href="/games">
+    <button>Games</button>
+  </a>
+  <a href="/profile">
+    <button>Profile</button>
+  </a>
+  <a href="/rules">
+    <button>Rules</button>
+  </a>
+  <a href="/settings">
+    <button>Settings</button>
+  </a>
 </div>
 
 <div *ngIf="showNewGameMenu">
-  <app-menu-game *ngIf="showNewGameMenu"></app-menu-game>
+  <app-menu-new-game *ngIf="showNewGameMenu"></app-menu-new-game>
 </div>
 
 <div *ngIf="showGames">
@@ -23,7 +34,7 @@
 </div>
 
 <div *ngIf="showRules">
-  <div ngInclude="rules.html"></div>
+  <div ngInclude="./rules.html"></div>
 </div>
 
 <button *ngIf="!showRootMenu" (click)="clickBack()">Back</button>

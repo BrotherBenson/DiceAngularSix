@@ -1,3 +1,20 @@
-<p>
-  menu-signup works!
-</p>
+<div class="center">
+  <div>
+    <label>username: </label>
+    <input [(ngModel)]="inputName" placeholder="username" type="text">
+  </div>
+
+  <div>
+    <label>password: </label>
+    <input [(ngModel)]="inputPassword" placeholder="password" type="text">
+  </div>
+
+  <div>
+    <label>confirm password: </label>
+    <input [(ngModel)]="inputConfirmPassword" placeholder="password" type="text">
+  </div>
+
+  <div>
+    <button (click)="clickSubmit()">Submit</button>
+  </div>
+</div>
