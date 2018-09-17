@@ -29,10 +29,6 @@
   <app-user-profile [user]="user"></app-user-profile>
 </div>
 
-<div *ngIf="showSettings">
-  <app-user-settings></app-user-settings>
-</div>
-
 <div *ngIf="showRules">
   <div ngInclude="./rules.html"></div>
 </div>

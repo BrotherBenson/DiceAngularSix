@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Game } from '../shared/models/game';
 import { Player } from '../shared/models/player';
+import { Turn } from '../game-turn/turn';
 
 @Component({
   selector: 'app-player-game',
@@ -9,6 +10,7 @@ import { Player } from '../shared/models/player';
 })
 export class PlayerGameComponent implements OnInit {
   @Input() player: Player;
+  @Input() turn: Turn;
   
   constructor() { }
 

@@ -1,12 +1,7 @@
 Currently, it's player {{ turn.player.user.id }}'s turn.
 
-<div> Player One View </div>
-<p *ngIf="turn.player.user.id == 1 " > Currently, it is your turn.</p>
-<p *ngIf="turn.player.user.id !=  1 "> Currently, it is not your turn.</p>
-
-
 <button (click)="endTurn()">End Turn</button>
 
 <div *ngFor="let player of game.players">
-    <app-player-game [player]="player"></app-player-game>
+    <app-player-game [turn]="turn" [player]="player"></app-player-game>
 </div>
