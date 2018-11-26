@@ -29,6 +29,15 @@ export class GameTurnComponent implements OnInit {
   }
 
   clickDice(die: Die): void {
+    // if there are no options, color it unclickable.
+    // if there is one option, color it clickable and use that option.
+    // if there are more than one options, open a menu.
+    // a dice has a an array of potential values in a given array.
+      // individual and multiples (1x2x3x4x5x)
+      // straight
+    
+
+    this.scoringService.checkForSets
     if (die != null){
       die.toggleDieState();
     }

@@ -21,6 +21,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserStatsComponent } from './user-stats/user-stats.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { GameDiceSelectorComponent } from './game-dice-selector/game-dice-selector.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AppRoutingModule } from './app-routing.module';
     RulesComponent,
     UserGamesComponent,
     UserProfileComponent,
-    UserStatsComponent      
+    UserStatsComponent,
+    GameDiceSelectorComponent      
   ],
   imports: [
     BrowserModule,
