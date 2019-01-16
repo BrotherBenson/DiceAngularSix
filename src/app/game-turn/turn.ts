@@ -30,7 +30,9 @@ export class Turn {
 	}
 
 	openDice(): Array<Die>{
-		return this.filterDice(DieState.Fresh);
+		var result = this.filterDice(DieState.Fresh);
+		console.log('openDice', result);
+		return result;
 	}
 
 	selectedDice(): Array<Die>{

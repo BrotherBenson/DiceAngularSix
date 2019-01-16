@@ -1,0 +1,35 @@
+<div style="border:1px solid black; width: 50px; height: 50px;">{{face}}</div>
+
+<div class="dice">
+    <div class="dice-grid-row">
+        <!-- row 1, column 1 -->
+        <div *ngIf="face === 1" class="dice-cell-empty"></div>
+        <div *ngIf="face === 2 || face === 3 || face === 4 || face === 5 || face === 6" class="dice-cell-full"></div>
+        <!-- row 1, column 2 -->
+        <div class="dice-cell-empty"></div>
+        <!-- row 1, column 3 -->
+        <div *ngIf="face === 1 || face === 2 || face === 3" class="dice-cell-empty"></div>
+        <div *ngIf="face === 4 || face === 5 || face === 6" class="dice-cell-full"></div>
+    </div>
+    <div class="dice-grid-row">
+        <!-- row 2, column 1 -->
+        <div *ngIf="face === 1 || face === 2 || face === 3 || face === 4 || face === 5" class="dice-cell-empty"></div>
+        <div *ngIf="face === 6" class="dice-cell-full"></div>
+        <!-- row 2, column 2 -->
+        <div *ngIf="face === 2 || face === 4" class="dice-cell-empty"></div>
+        <div *ngIf="face === 1 || face === 3 || face === 5 || face === 6" class="dice-cell-full"></div>
+        <!-- row 2, column 3 -->
+        <div *ngIf="face === 1 || face === 2 || face === 3 || face === 4 || face === 5" class="dice-cell-empty"></div>
+        <div *ngIf="face === 6" class="dice-cell-full"></div>
+    </div>
+    <div class="dice-grid-row">
+        <!-- row 3, column 1 -->
+        <div *ngIf="face === 1 || face === 2 || face === 3" class="dice-cell-empty"></div>
+        <div *ngIf="face === 4 || face === 5 || face === 6" class="dice-cell-full"></div>
+        <!-- row 3, column 2 -->
+        <div class="dice-cell-empty"></div>
+        <!-- row 3, column 3 -->
+        <div *ngIf="face === 1" class="dice-cell-empty"></div>
+        <div *ngIf="face === 2 || face === 3 || face === 4 || face === 5 || face === 6" class="dice-cell-full"></div>
+    </div>
+</div>

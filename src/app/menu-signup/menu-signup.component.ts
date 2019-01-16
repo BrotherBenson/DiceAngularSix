@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class MenuSignupComponent implements OnInit {
 
   userSuccessfullyCreated : boolean;
+  submitted = false;
+  onSubmit() { this.submitted = true; }
 
   constructor() { }
 

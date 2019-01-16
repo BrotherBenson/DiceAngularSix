@@ -65,6 +65,7 @@ export class GameTurnComponent implements OnInit {
       }
 
       this.turn.dice = result;
+      console.log('rolled', this.turn.dice);
   }
 
   scoreSelectedDice(): void {

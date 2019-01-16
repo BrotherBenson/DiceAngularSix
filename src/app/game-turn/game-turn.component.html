@@ -24,17 +24,10 @@
 
 	<div class="dice-panel" style="border: 1px solid red">
 		<p>FRESH</p>
-		<div *ngFor="let die of turn.openDice()" 
-			class="dice"
+		<game-dice-face *ngFor="let die of turn.openDice()"
+			[face]="die.face"
 			(click)="clickDice(die)">
-			<span>{{die.face}}</span>
-   		</div>
-		<!-- NOT SURE WHY THIS DOESN'T WORK
-		<div *ngFor="let die of turn.openDice()"
-			(click)="clickDice(die)"
-			class="dice">
-			<div ng-include="'die-1.html'"></div>
-		</div> -->
+		</game-dice-face>
 	</div>
 
 	<div>
