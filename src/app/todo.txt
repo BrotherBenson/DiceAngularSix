@@ -16,6 +16,11 @@ GAMES
         roll many
         roll singular
 
+USER STUFF
+    Forgot Password
+    Invite Emails
+
+
 
 
     12345
@@ -29,6 +34,13 @@ GAMES
         Sets => Can be ones/fives
         Ones/Fives => 
         
+BOT CONFIGURATION
+    At what point do you stop rolling? 
+        - Contingent on dice available.
+        - Contingent on your score vs. other people's scores.
+    You roll five dice and get [1,2,2,2,2], what do you keep?
+       
+
 
 
 

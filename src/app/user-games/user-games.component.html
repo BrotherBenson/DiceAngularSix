@@ -1,5 +1,6 @@
-<ul>
-  <li *ngFor="let game of games">
-    Game {{ game.players[0].user.name }}
-  </li>
-</ul>
+<div>
+  <a href="game/{{game.id}}"
+    *ngFor="let game of games">
+    <button data-id="{{game.id}}">{{ game.players[0].user.name }}</button>
+  </a>
+</div>

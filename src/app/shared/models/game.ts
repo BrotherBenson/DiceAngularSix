@@ -4,6 +4,7 @@ import { Settings } from './settings';
 import { Turn } from '../../game-turn/turn';
 
 export class Game {
+	id: number;
 	isReady: boolean;
 	players: Array<Player>;
 	scores: Array<Score>;
@@ -12,6 +13,7 @@ export class Game {
 	turns: Array<Turn>;
 
 	constructor() {
+		this.id = 331;
 		this.isReady = false;
 		this.players = [];
 		this.scores = [];

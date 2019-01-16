@@ -8,6 +8,8 @@ import { SignupRequest } from './models/signupRequest';
 import { SignupResponse } from './models/signupResponse';
 import { User } from '../shared/models/user';
 import { _ } from 'underscore';
+import { ForgotPasswordRequest } from './models/forgotPasswordRequest';
+import { ForgotPasswordResponse } from './models/forgotPasswordResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,7 @@ export class UserService {
   USER_ARRAY : Array<User>;
 
   constructor() { 
-    var USER_ARRAY = [
+    this.USER_ARRAY = [
       new User(1, "Benson", "banana"),
       new User(2, "Andy", "apple"),
       new User(3, "Dadoose", "darts"),
@@ -25,21 +27,6 @@ export class UserService {
       new User(5, "Abby", "artist"),
       new User(6, "Wendy", "willow")
     ];
-  }
-
-  login(request: LoginRequest): LoginResponse {
-    var lookupName = request.name;
-    var lookupPassword = request.password;
-
-    var user = _.first(this.USER_ARRAY, function(user){user.name == request.name});
-
-    var response = new LoginResponse();
-
-    if (user.password == lookupPassword){
-      response.isValid = true;
-    }
-
-    return response;
   }
 
   createUser(request: SignupRequest): SignupResponse {
@@ -54,6 +41,11 @@ export class UserService {
     return response;
   }
 
+  forgotPassword(request: ForgotPasswordRequest): ForgotPasswordResponse {
+    var response = new ForgotPasswordResponse();
+    return response;
+  }
+
   getGamesByStatus(status: GameStatus): Array<Game> {
     var results = [];
     return results;
@@ -62,10 +54,10 @@ export class UserService {
   getGames(user: User): Array<Game> {
     var gameOne = new Game();
     gameOne.players.push(
-      new Player(this.getUser(2)));
+      new Player(this.getUserById(2)));
     var gameTwo = new Game();
     gameTwo.players.push(
-      new Player(this.getUser(3)));
+      new Player(this.getUserById(3)));
 
     var results = [
       gameOne,
@@ -85,14 +77,34 @@ export class UserService {
     return results;
   }
 
-  getUser(id: number): User {
-    var USER_ARRAY = this.getUsers();
-    return _.find(USER_ARRAY, function(arrayUser){ return arrayUser.id == id; })
+  getUserByName(name: string): User{
+    return _.find(this.USER_ARRAY, function(arrayUser){ return arrayUser.name == name; })
+  }
+
+  getUserById(id: number): User {
+    return _.find(this.USER_ARRAY, function(arrayUser){ return arrayUser.id == id; })
   }
 
   getUsers(): Array<User>{
     var results = _.sortBy(this.USER_ARRAY, function(user){ return user.name; });
 
     return results;
+  }
+
+  login(request: LoginRequest): LoginResponse {
+    console.log('login', request);
+    var lookupName = request.name;
+    var lookupPassword = request.password;
+
+    var user = this.getUserByName(lookupName);
+
+    console.log(user);
+    var response = new LoginResponse();
+
+    if (user.password == lookupPassword){
+      response.isValid = true;
+    }
+
+    return response;
   }
 }

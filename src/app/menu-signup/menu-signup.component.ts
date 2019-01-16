@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupRequest } from '../services/models/signupRequest';
+import { SignupResponse } from '../services/models/signupResponse';
 
 @Component({
   selector: 'app-menu-signup',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-signup.component.css']
 })
 export class MenuSignupComponent implements OnInit {
+  signupRequest: SignupRequest;
 
+  inputName: string;
+  inputPassword: string;
+  inputConfirmPassword: string;
   userSuccessfullyCreated : boolean;
   submitted = false;
   onSubmit() { this.submitted = true; }
@@ -17,6 +23,10 @@ export class MenuSignupComponent implements OnInit {
     this.userSuccessfullyCreated = false;
   }
 
+  clickSubmit(): void{
+    this.signupRequest = new SignupRequest(this.inputName, this.inputPassword, this.inputConfirmPassword);
+    
+  }
 }
 
 export class SignUpViewModel{

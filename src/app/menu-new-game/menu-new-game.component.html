@@ -1,3 +1,24 @@
-<p>
-  menu-new-game works!
-</p>
+<div class="center">
+	<div *ngIf="showPlayerCountMenu">
+		How many players will be playing?
+		<div class="button-panel">
+			<button (click)="clickPlayerCount(2)">2</button>
+			<button (click)="clickPlayerCount(3)">3</button>
+			<button (click)="clickPlayerCount(4)">4</button>
+			<button (click)="clickPlayerCount(5)">5</button>
+			<button (click)="clickPlayerCount(6)">6</button>
+		</div>
+	</div>
+	<div *ngIf="showStandardRulesMenu">
+		Would you like to play with the standard rules?
+		<ul>
+			<li>Play to 10000</li>
+			<li>750 to get in</li>
+			<li>Unlimited rounds</li>
+			<li>Bust above 10000</li>
+		</ul>
+		<div class="button-panel">
+			<button (click)="clickStandardRules()">Yes</button>
+		</div>
+	</div>
+</div>

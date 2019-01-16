@@ -37,18 +37,25 @@ export class GameService {
 		return turn;
 	}
 
+	getGame(id: number): Game {
+		var game = new Game();
+		var player1 = new Player(new User(1, "Benson", "benson"));
+		var player2 = new Player(new User(2, "Andy", "password"));
+		var score1 = new Score(player1);
+		score1.total = 2300;
+		var score2 = new Score(player2);
+		score2.total = 2600;
+		game.scores = [
+			score1, score2
+		];
+		return game;
+	}
+
 	getNextShooter(game: Game): Player {
 		var lastTurn = _.last(game.turns);
 		var lastShooter = lastTurn.player;
 		var index = game.players.indexOf(lastShooter);
 		var lastPlayerPosition = game.players.length -1;
-
-		var obj = {
-			lastTurn: lastTurn, 
-			lastShooter: lastShooter, 
-			index: index, 
-			lastPlayerPosition: lastPlayerPosition
-		};
 
 		if (index == lastPlayerPosition){
 			return _.first(game.players);

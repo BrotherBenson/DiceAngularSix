@@ -10,9 +10,6 @@ import { GameService } from '../services/game.service';
 
 export class MenuGameComponent implements OnInit {
   @Input() game: Game;
-
-  showPlayerCountMenu = true;
-  showStandardRulesMenu = false;
   
   constructor(private gameService: GameService) {
   }
@@ -21,17 +18,5 @@ export class MenuGameComponent implements OnInit {
     if (this.game == null || this.game == undefined){
       this.game = new Game();
     }
-  }
-
-  clickPlayerCount(numberOfPlayers: number): void{
-    this.game.settings.numberOfPlayers = numberOfPlayers;
-
-    this.showPlayerCountMenu = false;
-    this.showStandardRulesMenu = true;
-  }
-
-  clickStandardRules(answer: boolean): void {
-    this.showStandardRulesMenu = false;
-    this.gameService.initializeGame(this.game);
   }
 }
